@@ -27,7 +27,7 @@ public class Notification {
     private String message;
 
     @NotNull
-    private String type; // "LIKE", "COMMENT", "FOLLOW"
+    private String type; // "LIKE", "COMMENT", "FOLLOW",s "MENTION", etc.
 
     private Integer postId;
     private Integer commentId;
