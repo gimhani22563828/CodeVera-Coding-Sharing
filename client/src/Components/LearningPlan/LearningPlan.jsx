@@ -140,9 +140,9 @@ const LearningPlan = () => {
       }));
       setTopicModal({...topicModal, visible: false});
       topicForm.resetFields();
-      message.success('Topic added successfully');
+      message.success('Milestone added successfully');
     } catch (err) {
-      message.error(err.message || 'Failed to add topic');
+      message.error(err.message || 'Failed to add milestone');
     }
   };
 
@@ -158,16 +158,16 @@ const LearningPlan = () => {
       }));
       setTopicModal({...topicModal, visible: false});
       topicForm.resetFields();
-      message.success('Topic updated successfully');
+      message.success('Milestone updated successfully');
     } catch (err) {
-      message.error(err.message || 'Failed to update topic');
+      message.error(err.message || 'Failed to update milestone');
     }
   };
 
   const handleDeleteTopic = (topicId) => {
     Modal.confirm({
-      title: 'Delete Topic',
-      content: 'Are you sure you want to delete this topic?',
+      title: 'Delete Milestone',
+      content: 'Are you sure you want to delete this milestone?',
       okText: 'Delete',
       okType: 'danger',
       cancelText: 'Cancel',
@@ -177,9 +177,9 @@ const LearningPlan = () => {
             jwt: token,
             topicId
           }));
-          message.success('Topic deleted successfully');
+          message.success('Milestone deleted successfully');
         } catch (err) {
-          message.error(err.message || 'Failed to delete topic');
+          message.error(err.message || 'Failed to delete milestone');
         }
       }
     });
@@ -361,7 +361,7 @@ const LearningPlan = () => {
                   <div className="flex justify-between items-center">
                     <span className="font-medium">{plan.title}</span>
                     <div>
-                      <Tag color="blue">{plan.topics?.length || 0} Topics</Tag>
+                      <Tag color="blue">{plan.topics?.length || 0} Milestone</Tag>
                     </div>
                   </div>
                 }
@@ -402,14 +402,14 @@ const LearningPlan = () => {
 
                 <div className="mt-4">
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="font-semibold text-lg">Topics</h3>
+                    <h3 className="font-semibold text-lg">Milestones</h3>
                     <Button
                       type="primary"
                       size="small"
                       icon={<PlusOutlined />}
                       onClick={() => showTopicModal('create', null, plan.id)}
                     >
-                      Add Topic
+                      Add Milestone
                     </Button>
                   </div>
 
@@ -470,9 +470,7 @@ const LearningPlan = () => {
                                   <Tag color="orange">
                                     Target: {new Date(topic.targetCompletionDate).toLocaleDateString()}
                                   </Tag>
-                                  {new Date(topic.targetCompletionDate) < new Date() && !topic.completed && (
-                                    <Tag color="red" className="ml-2">Overdue</Tag>
-                                  )}
+                                  
                                 </div>
                               )}
                             </div>
@@ -522,14 +520,14 @@ const LearningPlan = () => {
                     />
                   ) : (
                     <div className="text-center py-4 border-2 border-dashed rounded-lg">
-                      <p className="text-gray-500">No topics yet</p>
+                      <p className="text-gray-500">No milestone yet</p>
                       <Button
                         type="dashed"
                         className="mt-2"
                         icon={<PlusOutlined />}
                         onClick={() => showTopicModal('create', null, plan.id)}
                       >
-                        Add First Topic
+                        Add First Milestone
                       </Button>
                     </div>
                   )}
@@ -548,7 +546,7 @@ const LearningPlan = () => {
                     icon={<PlusOutlined />}
                     onClick={() => showTopicModal('create', null, selectedPlan.id)}
                   >
-                    Add Topic
+                    Add Milestone
                   </Button>
                   <Button
                     icon={<EditOutlined />}
@@ -567,7 +565,7 @@ const LearningPlan = () => {
                     <>
                       <div className="mb-2">
                         <span className="text-gray-600">
-                          {selectedPlan.topics.filter(t => t.completed).length} of {selectedPlan.topics.length} topics completed
+                          {selectedPlan.topics.filter(t => t.completed).length} of {selectedPlan.topics.length} milestone completed
                         </span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -580,7 +578,7 @@ const LearningPlan = () => {
                       </div>
                     </>
                   ) : (
-                    <p className="text-gray-500">No topics to track progress</p>
+                    <p className="text-gray-500">No milestone to track progress</p>
                   )}
                 </div>
                 
@@ -592,7 +590,7 @@ const LearningPlan = () => {
                       icon={<PlusOutlined />}
                       onClick={() => showTopicModal('create', null, selectedPlan.id)}
                     >
-                      Add Topic
+                      Add Milestone
                     </Button>
                     <Button
                       icon={<LinkOutlined />}
