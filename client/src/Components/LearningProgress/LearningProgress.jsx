@@ -42,6 +42,8 @@ const LearningProgress = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editing, setEditing] = useState(null);
 
+// Fetch progress updates on component mount
+
   useEffect(() => {
     dispatch(getProgressUpdates(token));
   }, [dispatch]);
