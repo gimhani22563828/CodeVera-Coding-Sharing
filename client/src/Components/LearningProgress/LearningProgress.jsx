@@ -26,7 +26,7 @@ import {
 import "./LearningProgress.css"; // 👈 Make sure this CSS file is created
 
 
-// LearningProgress component manages user learning progress updates
+
 
 
 const { Option } = Select;
