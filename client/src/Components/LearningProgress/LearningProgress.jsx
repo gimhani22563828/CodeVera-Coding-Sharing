@@ -27,7 +27,7 @@ import "./LearningProgress.css"; // 👈 Make sure this CSS file is created
 
 
 // LearningProgress component manages user learning progress updates
-// Populate form fields based on selected template
+
 
 const { Option } = Select;
 
