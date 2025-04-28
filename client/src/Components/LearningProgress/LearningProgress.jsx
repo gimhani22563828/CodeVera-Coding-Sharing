@@ -61,6 +61,8 @@ const LearningProgress = () => {
     setEditing(null);
   };
 
+// Handle form submission for creating or updating progress updates
+
   const handleTemplateChange = (value) => {
     if (value === "tutorial") {
       form.setFieldsValue({
