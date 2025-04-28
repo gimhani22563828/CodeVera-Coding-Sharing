@@ -34,6 +34,8 @@ const LearningProgress = () => {
   const dispatch = useDispatch();
   const token = localStorage.getItem("token");
 
+  // Select learning progress updates from Redux store
+
   const { updates } = useSelector((store) => store.learningProgress);
 
   const [form] = Form.useForm();
