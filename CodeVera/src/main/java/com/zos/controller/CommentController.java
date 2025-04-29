@@ -91,7 +91,7 @@ public class CommentController {
 
         List<Comments> comments = commentService.findCommentByPostId(postId);
 
-        MessageResponse res = new MessageResponse("Comment Updated Successfully");
+        MessageResponse res = new MessageResponse("Comment  Updated  Successfully");
 
         return new ResponseEntity<>(comments, HttpStatus.ACCEPTED);
     }
