@@ -79,7 +79,7 @@ public class CommentController {
     @DeleteMapping("/delete/{commentId}")
     public ResponseEntity<MessageResponse> deleteCommentHandler(@PathVariable Integer commentId) throws CommentException {
 
-        commentService.deleteCommentById(commentId);
+        commentService.deleteCommentById( commentId );
 
         MessageResponse res = new MessageResponse("Comment Delete Successfully");
 
