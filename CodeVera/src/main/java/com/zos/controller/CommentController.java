@@ -42,7 +42,7 @@ public class CommentController {
 
         System.out.println("created comment c--- " + createdComment.getContent());
 
-        return new ResponseEntity<Comments>(createdComment, HttpStatus.CREATED);
+        return new ResponseEntity<Comments>(createdComment,  HttpStatus.CREATED);
 
     }
 
