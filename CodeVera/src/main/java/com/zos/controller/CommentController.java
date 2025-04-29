@@ -68,7 +68,7 @@ public class CommentController {
     @PutMapping("/edit")
     public ResponseEntity<MessageResponse> editCommentHandler(@RequestBody Comments comment) throws CommentException {
 
-        commentService.editComment(comment, comment.getId());
+        commentService.editComment(comment,comment.getId());
 
         MessageResponse res = new MessageResponse("Comment Updated Successfully");
 
