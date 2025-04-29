@@ -32,7 +32,7 @@ public class NotificationController {
         User user = userService.findUserProfile(token);
         Notification createdNotification = notificationService.createNotification(notification, user.getId());
 
-        return new ResponseEntity<>(createdNotification, HttpStatus.CREATED);
+        return new ResponseEntity<>(createdNotification,  HttpStatus.CREATED);
     }
 
     @GetMapping("/")
@@ -50,7 +50,7 @@ public class NotificationController {
             @RequestHeader("Authorization") String token) throws UserException {
 
         User user = userService.findUserProfile(token);
-        List<Notification> notifications = notificationService.getUnreadNotifications(user.getId());
+        List<Notification>  notifications = notificationService.getUnreadNotifications(user.getId());
 
         return new ResponseEntity<>(notifications, HttpStatus.OK);
     }
@@ -65,9 +65,9 @@ public class NotificationController {
 
     @DeleteMapping("/delete/{notificationId}")
     public ResponseEntity<MessageResponse> deleteNotification(
-            @PathVariable Integer notificationId) throws NotificationException {
+            @PathVariable Integer notificationId) throws  NotificationException {
 
-        notificationService.deleteNotification(notificationId);
+        notificationService.deleteNotification( notificationId );
         MessageResponse res = new MessageResponse("Notification deleted successfully");
 
         return new ResponseEntity<>(res, HttpStatus.OK);

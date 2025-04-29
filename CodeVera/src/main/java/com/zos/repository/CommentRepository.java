@@ -13,6 +13,6 @@ public interface CommentRepository extends JpaRepository<Comments, Integer> {
 
 
     @Query("SELECT c FROM Comments c WHERE c.post.id = :postId")
-    List<Comments> findCommentsByPostId(@Param("postId") Integer postId);
+    List<Comments> findCommentsByPostId(@Param("postId") Integer postId );
 
 }

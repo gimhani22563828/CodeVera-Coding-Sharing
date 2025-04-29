@@ -47,7 +47,7 @@ public class Comments {
     private LocalDateTime createdAt;
 
 
-    public Comments() {
+    public Comments()  {
         // TODO Auto-generated constructor stub
     }
 
