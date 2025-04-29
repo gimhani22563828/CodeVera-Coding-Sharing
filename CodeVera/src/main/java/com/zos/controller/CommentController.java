@@ -89,7 +89,7 @@ public class CommentController {
     @GetMapping("/post/{postId}")
     public ResponseEntity<List<Comments>> getCommentHandler(@PathVariable Integer postId) throws CommentException, PostException {
 
-        List<Comments> comments = commentService.findCommentByPostId(postId);
+        List<Comments> comments = commentService.findCommentByPostId (postId);
 
         MessageResponse res = new MessageResponse("Comment  Updated  Successfully");
 
