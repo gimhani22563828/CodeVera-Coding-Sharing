@@ -65,9 +65,9 @@ public class NotificationController {
 
     @DeleteMapping("/delete/{notificationId}")
     public ResponseEntity<MessageResponse> deleteNotification(
-            @PathVariable Integer notificationId) throws NotificationException {
+            @PathVariable Integer notificationId) throws  NotificationException {
 
-        notificationService.deleteNotification(notificationId);
+        notificationService.deleteNotification( notificationId );
         MessageResponse res = new MessageResponse("Notification deleted successfully");
 
         return new ResponseEntity<>(res, HttpStatus.OK);
