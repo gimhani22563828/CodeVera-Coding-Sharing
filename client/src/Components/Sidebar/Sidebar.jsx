@@ -19,14 +19,16 @@ import {
   IoBarChartOutline,
   IoBarChart,
   IoExitOutline,
+  IoInformationCircleOutline,
+  IoInformationCircle,
 } from "react-icons/io5";
 import { RiCompassDiscoverLine, RiCompassDiscoverFill } from "react-icons/ri";
+import { BsPlusSquare, BsPlusSquareFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import CreatePostModal from "../Post/Create/CreatePostModal";
 import CreateReelModal from "../Create/CreateReel";
 import SearchComponent from "../SearchComponent/SearchComponent";
-import Notification from "../Notification/Notification";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -70,13 +72,23 @@ const Sidebar = () => {
     },
     {
       title: "Create Reels",
-      icon: <IoFilmOutline className="text-2xl" />,
-      activeIcon: <IoFilm className="text-2xl" />,
+      icon: <BsPlusSquare className="text-2xl" />,
+      activeIcon: <BsPlusSquareFill className="text-2xl" />,
+    },
+    {
+      title: "Create Story",
+      icon: <IoAddCircleOutline className="text-2xl" />,
+      activeIcon: <IoAddCircle className="text-2xl" />,
     },
     {
       title: "Profile",
       icon: <IoPersonOutline className="text-2xl" />,
       activeIcon: <IoPerson className="text-2xl" />,
+    },
+    {
+      title: "About Us",
+      icon: <IoInformationCircleOutline className="text-2xl" />,
+      activeIcon: <IoInformationCircle className="text-2xl" />,
     },
     {
       title: "Learning Plan",
