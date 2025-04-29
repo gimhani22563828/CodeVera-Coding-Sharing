@@ -28,7 +28,7 @@ public class NotificationServiceImplementation implements NotificationService {
         UserDto userDto = new UserDto();
         userDto.setEmail(user.getEmail());
         userDto.setId(user.getId());
-        userDto.setUsername(user.getUsername());
+        userDto.setUsername(user.getUsername()) ;
         userDto.setName(user.getName());
         userDto.setUserImage(user.getImage());
 
