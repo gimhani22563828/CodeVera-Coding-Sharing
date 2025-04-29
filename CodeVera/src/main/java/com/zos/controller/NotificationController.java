@@ -50,7 +50,7 @@ public class NotificationController {
             @RequestHeader("Authorization") String token) throws UserException {
 
         User user = userService.findUserProfile(token);
-        List<Notification> notifications = notificationService.getUnreadNotifications(user.getId());
+        List<Notification>  notifications = notificationService.getUnreadNotifications(user.getId());
 
         return new ResponseEntity<>(notifications, HttpStatus.OK);
     }
