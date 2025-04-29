@@ -25,7 +25,7 @@ import com.zos.services.CommentService;
 import com.zos.services.UserService;
 
 @RestController
-@RequestMapping("/api/comment")
+@RequestMapping("/api/comments")
 public class CommentController {
 
     @Autowired
