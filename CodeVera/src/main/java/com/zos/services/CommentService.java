@@ -15,7 +15,7 @@ public interface CommentService {
 	public Comments likeComment(Integer CommentId,Integer userId) throws UserException, CommentException;
 	public Comments unlikeComment (Integer CommentId,Integer userId) throws UserException, CommentException;
 	
-	public String deleteCommentById(Integer commentId) throws CommentException;
+	public String deleteCommentById  (Integer commentId) throws CommentException;
 	
 	public String editComment(Comments comment, Integer commentId) throws CommentException;
 	
