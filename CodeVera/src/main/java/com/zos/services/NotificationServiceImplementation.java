@@ -33,7 +33,7 @@ public class NotificationServiceImplementation implements NotificationService {
         userDto.setUserImage(user.getImage());
 
         notification.setUser(userDto);
-        notification.setCreatedAt(LocalDateTime.now());
+        notification.setCreatedAt(LocalDateTime.now()) ;
         notification.setRead(false);
 
         return notificationRepo.save(notification);
