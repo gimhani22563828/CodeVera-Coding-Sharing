@@ -59,7 +59,7 @@ const LearningProgress = () => {
     setEditing(null);
   };
 
-  // LearningProgress component manages user learning progress updates
+  
 
   const handleTemplateChange = (value) => {
     if (value === "tutorial") {
