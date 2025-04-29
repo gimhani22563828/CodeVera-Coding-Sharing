@@ -32,7 +32,7 @@ public class NotificationController {
         User user = userService.findUserProfile(token);
         Notification createdNotification = notificationService.createNotification(notification, user.getId());
 
-        return new ResponseEntity<>(createdNotification, HttpStatus.CREATED);
+        return new ResponseEntity<>(createdNotification,  HttpStatus.CREATED);
     }
 
     @GetMapping("/")
