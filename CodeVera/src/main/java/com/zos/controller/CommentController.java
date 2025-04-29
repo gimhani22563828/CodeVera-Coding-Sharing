@@ -42,7 +42,7 @@ public class CommentController {
 
         System.out.println("created comment c--- " + createdComment.getContent());
 
-        return new ResponseEntity<Comments>(createdComment, HttpStatus.CREATED);
+        return new ResponseEntity<Comments>(createdComment,  HttpStatus.CREATED);
 
     }
 
@@ -68,7 +68,7 @@ public class CommentController {
     @PutMapping("/edit")
     public ResponseEntity<MessageResponse> editCommentHandler(@RequestBody Comments comment) throws CommentException {
 
-        commentService.editComment(comment, comment.getId());
+        commentService.editComment(comment,comment.getId());
 
         MessageResponse res = new MessageResponse("Comment Updated Successfully");
 
@@ -79,9 +79,9 @@ public class CommentController {
     @DeleteMapping("/delete/{commentId}")
     public ResponseEntity<MessageResponse> deleteCommentHandler(@PathVariable Integer commentId) throws CommentException {
 
-        commentService.deleteCommentById(commentId);
+        commentService.deleteCommentById( commentId );
 
-        MessageResponse res = new MessageResponse("Comment Delete Successfully");
+        MessageResponse res  = new MessageResponse("Comment Delete Successfully");
 
         return new ResponseEntity<MessageResponse>(res, HttpStatus.ACCEPTED);
     }
@@ -89,9 +89,9 @@ public class CommentController {
     @GetMapping("/post/{postId}")
     public ResponseEntity<List<Comments>> getCommentHandler(@PathVariable Integer postId) throws CommentException, PostException {
 
-        List<Comments> comments = commentService.findCommentByPostId(postId);
+        List<Comments> comments = commentService.findCommentByPostId (postId);
 
-        MessageResponse res = new MessageResponse("Comment Updated Successfully");
+        MessageResponse res = new MessageResponse("Comment  Updated  Successfully");
 
         return new ResponseEntity<>(comments, HttpStatus.ACCEPTED);
     }

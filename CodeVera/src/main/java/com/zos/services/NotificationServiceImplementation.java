@@ -28,12 +28,12 @@ public class NotificationServiceImplementation implements NotificationService {
         UserDto userDto = new UserDto();
         userDto.setEmail(user.getEmail());
         userDto.setId(user.getId());
-        userDto.setUsername(user.getUsername());
+        userDto.setUsername(user.getUsername()) ;
         userDto.setName(user.getName());
         userDto.setUserImage(user.getImage());
 
         notification.setUser(userDto);
-        notification.setCreatedAt(LocalDateTime.now());
+        notification.setCreatedAt(LocalDateTime.now()) ;
         notification.setRead(false);
 
         return notificationRepo.save(notification);
