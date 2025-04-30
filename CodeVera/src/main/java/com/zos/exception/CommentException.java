@@ -2,7 +2,7 @@ package com.zos.exception;
 
 public class CommentException extends Exception {
 
-    public CommentException() {
+    public CommentException()  {
         // TODO Auto-generated constructor stub
     }
 

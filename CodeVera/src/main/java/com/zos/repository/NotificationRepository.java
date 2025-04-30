@@ -13,6 +13,6 @@ public interface NotificationRepository extends JpaRepository<Notification, Inte
     @Query("SELECT n FROM Notification n WHERE n.user.id = :userId ORDER BY n.createdAt DESC")
     List<Notification> findByUserId(@Param("userId") Integer userId);
 
-    @Query("SELECT n FROM Notification n WHERE n.user.id = :userId AND n.isRead = false")
+    @Query("SELECT n FROM Notification n WHERE n.user.id =  :userId AND n.isRead = false")
     List<Notification> findUnreadByUserId(@Param("userId") Integer userId);
 }
