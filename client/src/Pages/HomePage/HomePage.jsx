@@ -100,7 +100,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Right Sidebar */}
+        {/* Right Navbar */}
         <div className="hidden lg:block w-80 pr-4 pl-6">
           <HomeRight suggestedUser={suggestedUser} />
         </div>
