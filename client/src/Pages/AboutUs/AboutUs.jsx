@@ -2,24 +2,51 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="w-full min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-            About <span className="text-green-600">CodeVera</span>
-          </h1>
-          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
-            The collaborative platform where developers solve problems together
+    <div className="min-h-screen bg-white">
+      {/* Hero with Abstract Background */}
+      <div className="relative bg-gray-900 overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 mix-blend-multiply"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              We're <span className="text-emerald-400">CodeVera</span>
+            </h1>
+            <p className="mt-6 max-w-lg mx-auto text-xl text-gray-200">
+              Where developers unite to solve, share, and grow together
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Platform Definition */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="lg:text-center">
+          <h2 className="text-base font-semibold tracking-wide text-emerald-500 uppercase">
+            Collaborative Coding
+          </h2>
+          <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            A better way to solve coding challenges
+          </p>
+          <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            CodeVera combines real-time collaboration with community wisdom to
+            help you overcome any coding obstacle.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-500">
-              <div className="flex items-center mb-4">
-                <div className="bg-green-100 p-3 rounded-full mr-4">
+        {/* Value Propositions */}
+        <div className="mt-16">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            {[
+              {
+                name: "Collective Intelligence",
+                description:
+                  "Tap into the knowledge of thousands of developers worldwide",
+                icon: (
                   <svg
-                    className="h-6 w-6 text-green-600"
+                    className="h-8 w-8 text-emerald-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -28,179 +55,295 @@ const AboutUs = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
                     />
                   </svg>
+                ),
+              },
+              {
+                name: "Instant Help",
+                description:
+                  "Get solutions to your coding problems in real-time",
+                icon: (
+                  <svg
+                    className="h-8 w-8 text-emerald-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                ),
+              },
+              {
+                name: "Skill Growth",
+                description:
+                  "Learn from solving real-world problems with peers",
+                icon: (
+                  <svg
+                    className="h-8 w-8 text-emerald-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+                ),
+              },
+            ].map((feature) => (
+              <div key={feature.name} className="pt-6">
+                <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8 h-full">
+                  <div className="-mt-6">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-white shadow-md">
+                      {feature.icon}
+                    </div>
+                    <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                      {feature.name}
+                    </h3>
+                    <p className="mt-5 text-base text-gray-500">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800">
-                  Our Purpose
-                </h2>
               </div>
-              <p className="text-gray-600">
-                CodeVera is a thriving community where developers share coding
-                challenges, collaborate on solutions, and grow together. Whether
-                you're stuck on a bug or want to help others, this is your space
-                to connect through code.
-              </p>
-            </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-500">
-              <div className="flex items-center mb-4">
-                <div className="bg-green-100 p-3 rounded-full mr-4">
-                  <svg
-                    className="h-6 w-6 text-green-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-800">
-                  How It Works
-                </h2>
-              </div>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <svg
-                    className="h-5 w-5 text-green-500 mr-2 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span>
-                    <strong>Post</strong> your coding problems with relevant
-                    details
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    className="h-5 w-5 text-green-500 mr-2 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span>
-                    <strong>Get solutions</strong> from experienced developers
-                    worldwide
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    className="h-5 w-5 text-green-500 mr-2 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span>
-                    <strong>Vote</strong> on the best solutions to help others
-                    find quality answers
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    className="h-5 w-5 text-green-500 mr-2 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span>
-                    <strong>Build reputation</strong> by contributing helpful
-                    solutions
-                  </span>
-                </li>
-              </ul>
-            </div>
+      {/* How It Works */}
+      <div className="bg-gray-50">
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+          <div className="lg:mx-auto lg:max-w-2xl lg:text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              How CodeVera Works
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Simple steps to get unstuck and keep learning
+            </p>
           </div>
 
-          <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-500 h-full">
-            <div className="flex items-center mb-4">
-              <div className="bg-green-100 p-3 rounded-full mr-4">
-                <svg
-                  className="h-6 w-6 text-green-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
+          <div className="mt-20">
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+
+              <div className="relative space-y-12 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8">
+                {[
+                  {
+                    name: "Post Your Challenge",
+                    description:
+                      "Describe your coding problem with relevant details and code snippets",
+                    icon: (
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-emerald-500 text-white">
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                          />
+                        </svg>
+                      </div>
+                    ),
+                  },
+                  {
+                    name: "Get Community Help",
+                    description:
+                      "Other developers review your problem and propose solutions",
+                    icon: (
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-emerald-500 text-white">
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                          />
+                        </svg>
+                      </div>
+                    ),
+                  },
+                  {
+                    name: "Collaborate in Real-Time",
+                    description:
+                      "Work together on solutions using our shared coding environment",
+                    icon: (
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-emerald-500 text-white">
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                      </div>
+                    ),
+                  },
+                  {
+                    name: "Build Your Reputation",
+                    description:
+                      "Earn recognition by helping others solve their challenges",
+                    icon: (
+                      <div className="flex items-center justify-center h-12 w-12 rounded-md bg-emerald-500 text-white">
+                        <svg
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                          />
+                        </svg>
+                      </div>
+                    ),
+                  },
+                ].map((step, index) => (
+                  <div
+                    key={step.name}
+                    className={`relative lg:flex lg:items-start ${
+                      index % 2 === 0
+                        ? "lg:text-right lg:mr-8"
+                        : "lg:text-left lg:ml-8 lg:mt-20"
+                    }`}
+                  >
+                    <div
+                      className={`lg:w-1/2 lg:px-4 ${
+                        index % 2 === 0 ? "lg:order-1" : ""
+                      }`}
+                    >
+                      <h3 className="text-lg font-medium text-gray-900">
+                        {step.name}
+                      </h3>
+                      <p className="mt-2 text-base text-gray-500">
+                        {step.description}
+                      </p>
+                    </div>
+                    <div
+                      className={`mt-8 flex items-center justify-center h-12 w-12 rounded-md bg-white shadow-md lg:mt-0 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 ${
+                        index % 2 === 0 ? "lg:order-2" : ""
+                      }`}
+                    >
+                      {step.icon}
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">
-                Our Community
-              </h2>
-            </div>
-            <p className="text-gray-600 mb-6">
-              We've built a supportive environment where developers of all
-              levels can learn and teach. Our community guidelines ensure
-              respectful, constructive discussions focused on solving real
-              coding challenges.
-            </p>
-            <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
-              <p className="text-green-700 italic">
-                "The best way to learn is to teach, and the best way to teach is
-                to keep it simple."
-                <span className="block mt-2 text-right font-medium">
-                  - Richard Feynman
-                </span>
-              </p>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-6">
-            By The Numbers
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <div className="bg-white px-6 py-4 rounded-lg shadow-md border border-gray-100">
-              <p className="text-3xl font-bold text-green-600">50,000+</p>
-              <p className="text-gray-500">Problems Solved</p>
+      {/* Stats */}
+      <div className="bg-white py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center">
+            <h2 className="text-base font-semibold tracking-wide text-emerald-500 uppercase">
+              Trusted by developers
+            </h2>
+            <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              CodeVera in numbers
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { name: "Active Developers", value: "250K+" },
+                { name: "Problems Solved", value: "1.2M+" },
+                { name: "Solutions Shared", value: "3.8M+" },
+                { name: "Response Time", value: "<15 min" },
+              ].map((stat) => (
+                <div key={stat.name} className="pt-6">
+                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div className="-mt-6">
+                      <div>
+                        <span className="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg">
+                          <svg
+                            className="h-6 w-6 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                        {stat.name}
+                      </h3>
+                      <p className="mt-2 text-base text-gray-500">
+                        {stat.value}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="bg-white px-6 py-4 rounded-lg shadow-md border border-gray-100">
-              <p className="text-3xl font-bold text-green-600">200,000+</p>
-              <p className="text-gray-500">Solutions Shared</p>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="bg-gray-900">
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span className="block">Ready to dive in?</span>
+            <span className="block text-emerald-400">
+              Start solving with CodeVera today.
+            </span>
+          </h2>
+          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-600"
+              >
+                Get started
+              </a>
             </div>
-            <div className="bg-white px-6 py-4 rounded-lg shadow-md border border-gray-100">
-              <p className="text-3xl font-bold text-green-600">98%</p>
-              <p className="text-gray-500">Questions Answered</p>
+            <div className="ml-3 inline-flex rounded-md shadow">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-emerald-500 bg-white hover:bg-gray-50"
+              >
+                Learn more
+              </a>
             </div>
           </div>
         </div>
