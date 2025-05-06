@@ -17,6 +17,7 @@ import LearningPlan from "../../Components/LearningPlan/LearningPlan";
 import LearningProgress from "../../Components/LearningProgress/LearningProgress";
 import AboutUs from "../AboutUs/AboutUs";
 import OAuthSuccess from "../Auth/OAuthSuccess";
+import SearchComponent from "../../Components/SearchComponent/SearchComponent";
 
 const Routers = () => {
   const location = useLocation();
@@ -34,8 +35,11 @@ const Routers = () => {
       {location.pathname !== "/login" && location.pathname !== "/signup" && (
         <div className="flex">
           {location.pathname !== "/reels" && (
-            <div className="NavbarBox border border-l-slate-500 w-[20%]">
+            <div className="w-[20%] min-w-[240px] h-screen flex flex-col border-r">
               <Navbar />
+              <div className="flex-1 overflow-y-auto">
+                <SearchComponent />
+              </div>
             </div>
           )}
           <div className="w-full pt-16 px-4">
