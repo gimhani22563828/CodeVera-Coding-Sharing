@@ -80,10 +80,6 @@ const UserDetailCard = ({ user, isRequser, isFollowing }) => {
               Follow
             </button>
           )}
-          <button className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md text-sm font-medium">
-            <FiMessageSquare size={16} />
-            {isRequser ? "Tools" : "Message"}
-          </button>
           <button className="p-2 rounded-full hover:bg-gray-100">
             <TbCircleDashed size={20} />
           </button>
