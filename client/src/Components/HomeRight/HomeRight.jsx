@@ -1,68 +1,118 @@
-// HomeRight.jsx
 import React from "react";
-import { BsDot } from "react-icons/bs";
 import { useSelector } from "react-redux";
-import SuggestionsUserCard from "./SuggestionsUserCard";
+import {
+  Box,
+  Flex,
+  Text,
+  Avatar,
+  Button,
+  VStack,
+  Divider,
+  Link,
+} from "@chakra-ui/react";
+import { FiSettings, FiPlus } from "react-icons/fi";
 
-const HomeRight = ({ suggestedUser }) => {
+const HomeRight = () => {
   const { user } = useSelector((store) => store);
+
+  // Sample data - replace with your actual data source
+  const trendingTopics = [
+    { tag: "WebDevelopment", posts: "125K" },
+    { tag: "UXDesign", posts: "89K" },
+    { tag: "TechNews", posts: "72K" },
+    { tag: "Programming", posts: "156K" },
+    { tag: "DigitalArt", posts: "64K" },
+  ];
+
+  const suggestedUsers = [
+    { name: "Jane Cooper", username: "janecodes", mutuals: 3 },
+    { name: "Alex Morgan", username: "alexdev", mutuals: 5 },
+    { name: "Sam Wilson", username: "samdesigns", mutuals: 2 },
+  ];
+
   return (
-    <div className="bg-white p-4 rounded-md shadow-sm">
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center">
-          <img
-            className="w-12 h-12 rounded-full"
-            src={
-              user.reqUser?.image ||
-              "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-            }
-            alt="profile"
-          />
-          <div className="ml-3">
-            <p className="font-bold text-sm">{user.reqUser?.username}</p>
-            <p className="text-xs opacity-60">{user.reqUser?.username}</p>
-          </div>
-        </div>
-        <p className="text-blue-500 text-sm cursor-pointer">Switch</p>
-      </div>
+    <Box width="300px" position="fixed" right="4" top="20" p={4}>
+      {/* User Profile */}
+      <Flex align="center" mb={6}>
+        <Avatar
+          size="md"
+          src={user.reqUser?.image}
+          name={user.reqUser?.username}
+          mr={3}
+        />
+        <Box flex="1">
+          <Text fontWeight="bold">{user.reqUser?.username}</Text>
+          <Text fontSize="sm" color="gray.500">
+            {user.reqUser?.name}
+          </Text>
+        </Box>
+        <Button variant="link" color="blue.500" size="sm">
+          Switch
+        </Button>
+      </Flex>
 
-      <div className="flex justify-between items-center mb-2">
-        <p className="text-sm font-semibold text-gray-600">
-          Suggestions for you
-        </p>
-        <p className="text-xs font-medium text-blue-500">View All</p>
-      </div>
+      {/* Trending Section */}
+      <Box bg="gray.50" borderRadius="lg" p={4} mb={6}>
+        <Flex justify="space-between" align="center" mb={3}>
+          <Text fontWeight="semibold">Trending Today</Text>
+          <FiSettings size={18} color="#718096" />
+        </Flex>
 
-      <div className="space-y-4">
-        {suggestedUser.map((item, index) => (
-          <SuggestionsUserCard
-            key={index}
-            image={
-              item.userImage ||
-              "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-            }
-            username={item.username}
-            description={"Follows you"}
-          />
-        ))}
-      </div>
+        <VStack spacing={3} align="stretch">
+          {trendingTopics.map((topic, index) => (
+            <Box key={index}>
+              <Text fontWeight="medium">#{topic.tag}</Text>
+              <Text fontSize="sm" color="gray.500">
+                {topic.posts} posts
+              </Text>
+            </Box>
+          ))}
+        </VStack>
+      </Box>
 
-      <div className="opacity-50 text-xs flex flex-wrap gap-1 mt-6">
-        <span>About</span>
-        <BsDot />
-        <span>Help</span>
-        <BsDot />
-        <span>Privacy</span>
-        <BsDot />
-        <span>Terms</span>
-        <BsDot />
-        <span>Language</span>
-        <BsDot />
-        <span>Meta</span>
-        <BsDot />
-        <span>© 2025 CodeVera</span>
-      </div>
-    </div>
+      {/* Suggested Users */}
+      <Box mb={6}>
+        <Flex justify="space-between" align="center" mb={3}>
+          <Text fontWeight="semibold">Suggested For You</Text>
+          <Button variant="link" fontSize="sm">
+            See All
+          </Button>
+        </Flex>
+
+        <VStack spacing={4}>
+          {suggestedUsers.map((user, index) => (
+            <Flex key={index} align="center" w="full">
+              <Avatar size="sm" src="" name={user.name} mr={3} />
+              <Box flex="1">
+                <Text fontWeight="medium">{user.username}</Text>
+                <Text fontSize="sm" color="gray.500">
+                  {user.mutuals} mutual connections
+                </Text>
+              </Box>
+              <Button
+                size="sm"
+                variant="outline"
+                leftIcon={<FiPlus size={14} />}
+              >
+                Follow
+              </Button>
+            </Flex>
+          ))}
+        </VStack>
+      </Box>
+
+      {/* Footer Links */}
+      <Divider mb={3} />
+      <Flex wrap="wrap" gap={2} fontSize="xs" color="gray.500">
+        {["About", "Help", "Terms", "Privacy", "© 2025 CodeVera"].map(
+          (item) => (
+            <Link key={item} href="#" _hover={{ color: "gray.700" }}>
+              {item}
+            </Link>
+          )
+        )}
+      </Flex>
+    </Box>
   );
 };
 
